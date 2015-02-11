@@ -1,71 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Juiced Racers</title>
+<meta charset="UTF-8">
+<title>Juiced Racers</title>
 </head>
 <body>
 
-	<button onclick="refreshPage()">Reload Race</button>
+<button onclick="refreshPage()">Reload Race</button>
 
-	<br>
+<br>
 
-		<script>
+<script>
 
-		var juicedRacer = function (nm, tm, ct, tsa, jc){
-			this.racerName = nm;
-			this.team = tm;
-			this.country = ct;
-			this.topSpeedAvg = tsa;
-			this.juicedUp = jc;
-			this.position = 0;
+var juicedRacer = function (nm, tm, ct, tsa, jc){
+this.racerName = nm;
+this.team = tm;
+this.country = ct;
+this.topSpeedAvg = tsa;
+this.juicedUp = jc;
+this.position = 0;
 
-			this.report = function(){
-				return this.racerName + " is at " + this.position + " miles!";
-			};
-			this.peddal = function(){
-				if(this.juicedUp > (Math.random() * 10)){
-					this.position += this.topSpeedAvg;
-				}
-			};
-		}
+this.report = function(){
+return this.racerName + " is at " + this.position + " miles!";
+};
+this.peddal = function(){
+if(this.juicedUp > (Math.random() * 10)){
+this.position += this.topSpeedAvg;
+}
+};
+}
 
-		var lance = new juicedRacer ("Lance Armstrong", "Post", "USA", 34, 10),
-				yan = new juicedRacer ("Yan Ullric", "BMW", "Germany", 38, 6),
-				floyd = new juicedRacer ("Floyd Landis", "UPS", "USA", 37, 6.5);
+var lance = new juicedRacer ("Lance Armstrong", "Post", "USA", 34, 10),
+yan = new juicedRacer ("Yan Ullric", "BMW", "Germany", 38, 6),
+floyd = new juicedRacer ("Floyd Landis", "UPS", "USA", 37, 6.5);
 
-		var distance = 75;
+var distance = 75;
 
-		while (lance.position < distance || yan.position < distance || floyd.position < distance){
-			lance.peddal();
-			yan.peddal();
-			floyd.peddal();
-		}
+while (lance.position < distance || yan.position < distance || floyd.position < distance){
+lance.peddal();
+yan.peddal();
+floyd.peddal();
+}
 
-		document.write("<br />");
+document.write("<br />");
 
-		document.write(lance.report() + "<br />");
-		document.write(yan.report() + "<br />");
-		document.write(floyd.report() + "<br />");
+document.write(lance.report() + "<br />");
+document.write(yan.report() + "<br />");
+document.write(floyd.report() + "<br />");
 
-		if(lance.position > yan.position && lance.position > floyd.position){
-			document.write("<h1>Lance is the winner of the Juiced Tour at </h1>" + lance.position + "<h1> miles! He must have been Juiced Up!</h1>");
-		}else if(yan.position > lance.position && yan.position > floyd.position){
-			document.write("<h1>Yan is the winner of the Juiced Tour at </h1>" + yan.position + "<h1> miles! He must have been Juiced Up!</h1>");
-		}else{
-			document.write("<h1>Floyd is the winner of the Juiced Tour at </h1>" + floyd.position + "<h1> miles! He must have been Juiced Up!</h1>");
-		};
-
-	</script>
-
-
-	<script>
-
-	function refreshPage() {		//taken from w3schools
-	location.reload();			//http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_loc_reload
-	}
+if(lance.position > yan.position && lance.position > floyd.position){
+document.write("<h1>Lance is the winner of the Juiced Tour at </h1>" + lance.position + "<h1> miles! He must have been Juiced Up!</h1>");
+}else if(yan.position > lance.position && yan.position > floyd.position){
+document.write("<h1>Yan is the winner of the Juiced Tour at </h1>" + yan.position + "<h1> miles! He must have been Juiced Up!</h1>");
+}else{
+document.write("<h1>Floyd is the winner of the Juiced Tour at </h1>" + floyd.position + "<h1> miles! He must have been Juiced Up!</h1>");
+};
 
 </script>
-	
+
+<script>
+
+function refreshPage() {		//taken from w3schools
+location.reload();			//http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_loc_reload
+}
+
+</script>
+
 </body>
 </html>
